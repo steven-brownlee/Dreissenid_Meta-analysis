@@ -1,0 +1,97 @@
+---
+title: "Correlate Search Structure Document"
+output: github_document
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Search Parameters and Justification
+
+The search parameters for the literature search for the environmental correlates for 
+dreissenid mussels are as follows:
+
+> (mussel* AND (dreissen* OR zebra OR quagga) AND (invas* OR non-native OR introduc*))
+> AND (habitat OR environment* OR niche) AND (suitability OR requirement* OR limit*)
+
+This query was designed to capture both species of interest ( _Dreissena polymorpha_ and
+_Dreissena rostriformis bugensis_), as well as potential synonyms for invasion. The second line
+of the query as presented here functions to capture papers that evaluate the habitat of 
+dreissenid mussels
+
+## Search Structure and Databases
+
+```{r echo = FALSE}
+
+## install.packages('webshot')
+## webshot::install_phantomjs()
+
+# Above packages may need to be install to run DiagrammeR code below.
+
+library('DiagrammeR')
+
+grViz("digraph flowchart {
+  node [fontname = Helvetica, shape =  rectangle, fontsize = 12, 
+       style = filled]
+ 
+  tab1 [label = '@@1', fillcolor = LightSteelBlue, alpha = 0.5]
+  tab2 [label = '@@2', fillcolor = LightBlue1]
+  tab3 [label = '@@3', fillcolor = PaleTurquoise1]
+  tab4 [label = '@@4', fillcolor = PaleTurquoise2]
+  tab5 [label = '@@5', fillcolor = LightBlue2]
+  tab6 [label = '@@6', fillcolor = PaleTurquoise3]
+  tab7 [label = '@@7', fillcolor = LightBlue3]
+  tab8 [label = '@@8', fillcolor = Honeydew2]
+  tab9 [label = '@@9', fillcolor = Honeydew3]
+  tab10 [label = '@@10', fillcolor = DarkSeaGreen3]
+  
+  tab1 -> tab2 [arrowhead = vee];
+  tab1 -> tab3 [arrowhead = vee];
+  
+  tab3 -> tab4 [arrowhead = vee];
+  tab4 -> tab6 [arrowhead = vee];
+  tab6 -> tab8 [arrowhead = vee];
+  
+  tab2 -> tab5 [arrowhead = vee];
+  tab5 -> tab7 [arrowhead = vee];
+  tab7 -> tab8 [arrowhead = vee];
+  
+  tab8 -> tab9 [arrowhead = vee];
+  tab9 -> tab10 [arrowhead = vee];
+  
+  }
+
+  [1]: 'Query Databases'
+  [2]: 'ASFA'
+  [3]: 'Web of Science'
+  [4]: 'Screen Records by Title'
+  [5]: 'Screen Records by Title'
+  [6]: 'Screen Records by Abstract'
+  [7]: 'Screen Records by Abstract'
+  [8]: 'Combine Database Records'
+  [9]: 'Screen for Duplicates'
+  [10]: 'Export for Analysis'
+  
+  ")
+
+```
+
+The above review process will be used for both parallel literature searches. Titles
+will be retrieved from .bib files extracted from each database and analyzed using the 
+'revtools' package. Titles will first be screened by title and then abstract using the 
+following criteria:
+
+> [1.] Zebra/quagga mussels topic of exploration?     Y/N, yes include
+
+> [2.] North American range?                          North American included
+
+> [3.] Observational, modeling or experimental?       Observational included
+
+> [4.] Does it discuss correlates of distribution?    Y/N, yes included
+
+Each paper will be evaluated against the above criteria in sequential order -
+a failure to meet any of the criteria will result in an exclusion from the search. 
+Failure to meet the search criteria as well as which criteria were failed will be
+noted in each paper's entry in the analysis files for transparency.
