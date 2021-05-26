@@ -78,7 +78,7 @@ grViz("digraph flowchart {
 
 ```
 
-The above review process will be used for both parallel literature searches. Titles
+The above review process will be used for both parallel literature searches. Papers
 will be retrieved from .bib files extracted from each database and analyzed using the 
 'revtools' package. Titles will first be screened by title and then abstract using the 
 following criteria:
