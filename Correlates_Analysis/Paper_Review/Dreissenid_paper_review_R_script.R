@@ -1,6 +1,6 @@
 ##
 
-# Dreissenid Variable Identification Search
+# Dreissenid Paper Review R Script
 # Date: May 24 2021
 # Author: Steven Brownlee
 # Email: sbrownle@sfu.ca
