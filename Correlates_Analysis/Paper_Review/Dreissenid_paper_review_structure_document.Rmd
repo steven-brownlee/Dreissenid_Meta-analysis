@@ -68,7 +68,7 @@ grViz("digraph flowchart {
   
   ")
 ```
-## Analysis and Results of Review
+### Analysis and Results of Review
 
 The above figure, taken from the pre-established search protocol in the 'search
 structure' document, shows the results for each of the steps of filtering papers.

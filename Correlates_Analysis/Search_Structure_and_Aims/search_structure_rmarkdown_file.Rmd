@@ -19,7 +19,7 @@ dreissenid mussels are as follows:
 This query was designed to capture both species of interest ( _Dreissena polymorpha_ and
 _Dreissena rostriformis bugensis_), as well as potential synonyms for invasion. The second line
 of the query as presented here functions to capture papers that evaluate the habitat of 
-dreissenid mussels
+dreissenid mussels and their potential suitability for their establishment and persistence.
 
 ## Search Structure and Databases
 

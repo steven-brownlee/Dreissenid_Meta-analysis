@@ -14,7 +14,8 @@ This query was designed to capture both species of interest ( *Dreissena
 polymorpha* and *Dreissena rostriformis bugensis*), as well as potential
 synonyms for invasion. The second line of the query as presented here
 functions to capture papers that evaluate the habitat of dreissenid
-mussels
+mussels and their potential suitability for their establishment and
+persistence.
 
 ## Search Structure and Databases
 
